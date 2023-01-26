@@ -1,59 +1,35 @@
-:root {
-    --green: #00FF00;
-    --white: #ffffff;
-    --black: #000000;
-    --ocre: #DB7C26;
-    --pansypurple: #861657;
-    --babypowder: #FFFDF7;
-    --tealblue: #3C7A89;
-}
-* {
-    color: var(--fontColor);
-    font-family: helvetica;
-}
-
-body {
-    background: var(--bg);
-    padding: 20px 50px;
-}
-
-ul {
-    font-family: helvetica;
-}
-
-img {
-    width: 200px;
-}
-
-li {
-    list-style: circle;
-}
-
-.list {
-    list-style: square;
-}
-.light-theme {
-    --bg: var(--babypowder);
-    --fontColor: var(--black);
-    --btnBg: var(--black);
-    --btnFontColor: var(--babypowder);
-}
-
-.dark-theme {
-    --bg: var(--black);
-    --fontColor: var(--white);
-    --btnBg: var(--white);
-    --btnFontColor: var(--black);
-}
-.btn {
-    position: absolute;
-    top: 20px;
-    left: 250px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: none;
-    color: var(--btnFontColor);
-    background-color: var(--btnBg);
-}
-.btn:focus { outline-style: none; }
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  .row.content {height: 450px}
+  
+  /* Set background color and 100% height */
+  .sidenav {
+    padding-top: 20px;
+    background-color: #fefefa ;
+    color: #441151;
+    height: 100%;
+  }
+  
+  /* Set background color, text and some padding */
+  footer {
+    background-color: #738290;
+    color: white;
+    padding: 15px;
+  }
+  .navbar-custom{
+      background-color: #fefefa;
+  }
+  
+  /* On small screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;} 
+  }
