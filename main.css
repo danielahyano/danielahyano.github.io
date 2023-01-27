@@ -4,46 +4,54 @@
     border-radius: 0;
   }
   
-  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-  .row.content {height: 450px}
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
   
-  /* Set background color and 100% height */
-  .sidenav {
+/* Set background color and 100% height */
+.sidenav {
     padding-top: 20px;
-    background-color: #fdfbfb ;
+    background-color: rgb(234, 235, 244);
     color: #1b112f;
     height: 100%;
-  }
+}
   
-  /* Set background color, text and some padding */
-  footer {
+/* Set background color, text and some padding */
+footer {
     background-color: #1b0f3e;
     color: white;
     padding: 15px;
-  }
-  .navbar-custom {
-    background-color: #dcdadd;
-  }
-  .navbar-custom  .navbar-text{
+}
+.navbar-custom {
+    background-color: rgb(223, 223, 245);
+}
+.navbar-custom  .navbar-text{
     color: #0c0627;
-  }
+}
+.pos1{
+    font-family: Georgia, serif;
+}
+.pos2{
+    font-family: Verdana, sans-serif;
+    text-transform: uppercase;
+    color: rgb(124, 124, 187);
+}
+.linkcolor{
+    color: rgb(124, 124, 187);
+}
   
-  /* On small screens, set height to 'auto' for sidenav and grid */
-  @media screen and (max-width: 767px) {
-    .sidenav {
-      height: auto;
-      padding: 15px;
-    }
-    .row.content {height:auto;}
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+.sidenav {
+    height: auto;
+    padding: 15px;
+}
+.row.content {height:auto;}
     
-    .dani{
-      color:green;
-    }
-  }
+}
 
 .btn-linkedin {
   background: #0E76A8;
-  border-radius: 0;
+  border-radius: 5px;
   color: #fff;
   border-width: 1px;
   border-style: solid;
