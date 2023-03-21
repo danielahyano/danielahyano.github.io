@@ -1,2 +1,60 @@
-<h1> Hello </h1>
-<p> This website was created to teach math.</p> 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counting cats</title>
+	<style>
+		.image {
+			width: 300px;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+    <h1> Learning how to count</h1>
+    <h2> How to use: </h2>
+        <p>
+            There is a button that you press to start. By moving the cursor, you will count how many cats there are in this page. 
+        </p>
+    
+    <h2> There are three cats in this page! Move your cursor to listen to their meow.</h2>
+	<button onclick="start()">Click this buttom to start!</button>
+	<br><br>
+	<img src="cat.jpg" onmouseover="playSound('image1')" class="image" id="image1" />
+	<img src="cat.jpg" onmouseover="playSound('image2')" class="image" id="image2" />
+	<img src="cat.jpg" onmouseover="playSound('image3')" class="image" id="image3" />
+	<audio id="sound">
+		<source src="cat_mew.mp3" type="audio/mpeg">
+	</audio>
+
+	<script>
+		var played1 = false;
+		var played2 = false;
+		var played3 = false;
+		var audio = document.getElementById("sound");
+
+		function playSound(imgId) {
+			if (imgId == "image1" && !played1) {
+				audio.currentTime = 0;
+				audio.play();
+				played1 = true;
+			}
+			if (imgId == "image2" && !played2) {
+				audio.currentTime = 0;
+				audio.play();
+				played2 = true;
+			}
+			if (imgId == "image3" && !played3) {
+				audio.currentTime = 0;
+				audio.play();
+				played3 = true;
+			}
+		}
+
+		function start() {
+			played1 = false;
+			played2 = false;
+			played3 = false;
+		}
+	</script>
+</body>
+</html>
