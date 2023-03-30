@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Interactive Devices | Daniela Yano</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<nav class="navbar navbar-custom">
+    <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                 <li class="active">
+                    <a  style="color:black" href="./index.html">
+                    Back
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-12 text-left" style="padding-left:150px; padding-right:400px"> 
+      <h1>Interactive device</h1>
+      <p>Date: March 28th 2023</p>
+      What if we could make it snow whenever we want? <br>
+      Well, we are not quite there, but we can still control the snow falling on the screen with this interactive device: 
+      <br>
+      <br>
+      <iframe width="780" height="473" src="https://www.youtube.com/embed/YZSANKBLKSk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <br>
+        <br>
+      <p>
+        This device has a blue enclosure, with a joystick and a button, that allows to control the snow fall and also the color of the sky.
+        The box was made with a blue cardboard paper and it is connected to the computer through a cable c type wire. Here's what the enclosure
+        looks like:
+        <br>
+        <br>
+        <img src="./pictures/enclosure.png" alt="A blue box with a joystick on the side and a button on the top." width="600">
+        <br>
+        <br>
+        To make the box, I used a ruler to divide the cardbox into four pieces (top, bottom, left and ride sides), as well as a small 
+        pieces at the end to allow for closing the box.
+        <br>
+        <br>
+        <img src="./pictures/box_setup.png" alt="A blue cardboard cut to make a box." width="600">
+        <br>
+        <br>
+        Inside the box, the EPS32 is located, and a breadboard and cable was used to connect the ESP32 to the joystick and the buttons:
+        <br>
+        <br>
+        <img src="./pictures/eps32_id.png" alt="The ESP32 device in a breadboard and a joystick and a button connected." width="600">
+        <br>
+        <br>
+       
+        The joystick port SW was connected to the ESP32 port 17, port VRY connected to port 13, and port VRX connected to port 12. 
+        Furthermore, the joystick is connected to the ground and the 3V port. The button is connected to port 21 and ground. 
+
+
+
+      </p>
+
+      <h2>Technical Details</h2>
+      <p>
+        If you want to implement the same code, you can find the source code and a read me with the implementations details in my Github page:
+        <a href="https://github.com/danielahyano/interactive_devices">Snowfall Project GitHub page</a><div class="
+        "></div>
+        
+      </p>
+      
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>©️ Daniela Hikari Yano 2023</p>
+</footer>
+
+</body>
+</html>
