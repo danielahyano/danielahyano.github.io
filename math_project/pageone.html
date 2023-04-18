@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Practice time</title>
+	<style>
+		.image {
+			width: 300px;
+			height: auto;
+		}
+	</style>
+</head>
+<body style="background-color:#FFECCE;">
+    <h2> How to use: </h2>
+        <p>
+            To start press the start button. By moving the cursor, you will count how many cats there are in this page. <br>
+
+        </p>
+    
+    <h2> Move your cursor to listen to their meow.</h2>
+	<button onclick="start()">Start</button>
+	<br><br>
+	<div id="images"></div>
+	<audio id="sound">
+		<source src="cat_mew.mp3" type="audio/mpeg">
+	</audio>
+
+	<p>There is one cat in this page.</p>
+	<a href="./pagetwo.html">next page</a> <br>
+
+
+	<script>
+		var audio = document.getElementById("sound");
+		var played = {};
+
+		// generate a random number of images between 1 and 10
+		var count = 0;
+		var numImages = count;
+
+		// generate the HTML for the images and add them to the page
+		var imagesDiv = document.getElementById("images");
+		for (var i = 1; i <= numImages; i++) {
+			var img = document.createElement("img");
+			img.src = "cat.jpg";
+			img.className = "image";
+			img.id = "image" + i;
+			img.onmouseover = function() { playSound(this.id); };
+			imagesDiv.appendChild(img);
+			played[img.id] = false;
+		}
+
+		function playSound(imgId) {
+			if (!played[imgId]) {
+				audio.currentTime = 0;
+				audio.play();
+				played[imgId] = true;
+			}
+		}
+
+		function start() {
+			for (var i = 1; i <= numImages; i++) {
+				played["image" + i] = false;
+			}
+		}
+	</script>
+</body>
+</html>

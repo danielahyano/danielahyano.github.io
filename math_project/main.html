@@ -16,20 +16,11 @@
             There is a button that you press to start. By moving the cursor, you will count how many cats there are in this page. 
         </p>
     
-    <h2> There are three cats in this page! Move your cursor to listen to their meow.</h2>
-	<button onclick="start()">Click this buttom to start!</button>
-	<br><br>
-	<img src="cat.jpg" onmouseover="playSound('image1')" class="image" id="image1" alt="cat" />
-	<img src="cat.jpg" onmouseover="playSound('image2')" class="image" id="image2" alt="cat" />
-	<img src="cat.jpg" onmouseover="playSound('image3')" class="image" id="image3" alt="cat"/>
-	<audio id="sound">
-		<source src="cat_mew.mp3" type="audio/mpeg">
-	</audio>
-
+    <a href="./pageone.html">Learn</a>
+	<br>
+	<a href="./practice.html">Practice</a>
 	<script>
 		var played1 = false;
-		var played2 = false;
-		var played3 = false;
 		var audio = document.getElementById("sound");
 
 		function playSound(imgId) {
@@ -38,25 +29,11 @@
 				audio.play();
 				played1 = true;
 			}
-			if (imgId == "image2" && !played2) {
-				audio.currentTime = 0;
-				audio.play();
-				played2 = true;
-			}
-			if (imgId == "image3" && !played3) {
-				audio.currentTime = 0;
-				audio.play();
-				played3 = true;
-			}
 		}
 
-		function start() {
-			played1 = false;
-			played2 = false;
-			played3 = false;
-		}
+	
 	</script>
     <br>
-    <a href="https://www.freepik.com/free-vector/cute-cat-sitting-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium-vector-flat-cartoon-style_22638092.htm#query=cat&position=3&from_view=keyword&track=sph">Image by catalyststuff</a> on Freepik
+    
 </body>
 </html>

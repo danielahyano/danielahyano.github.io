@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Practice time</title>
+	<style>
+		.image {
+			width: 300px;
+			height: auto;
+		}
+	</style>
+</head>
+<body style="background-color:#FFECCE;">
+    <h1> Learning how to count | Time to practice!</h1>
+    <h2> How to use: </h2>
+        <p>
+            To start press the start button. By moving the cursor, you will count how many cats there are in this page. <br>
+			Then, use the checkbox to say how many cats there are in this page. Press the refresh button to start again.
+        </p>
+    
+    <h2> Move your cursor to listen to their meow.</h2>
+	<button onclick="start()">Start</button>
+	<br><br>
+	<div id="images"></div>
+	<audio id="sound">
+		<source src="cat_mew.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="sound_correct">
+		<source src="correct-6033.mp3" type="audio/mpeg">
+	</audio>
+
+	<audio id="sound_incorrect">
+		<source src="negative_beeps-6008.mp3" type="audio/mpeg">
+	</audio>
+
+	<p>How many cats are there?:</p>
+    <div>
+        <input type="radio" name="number" value="1" id="one">
+        <label for="one">1</label>
+    </div>
+    <div>
+        <input type="radio" name="number" value="2" id="two">
+        <label for="two">2</label>
+    </div>
+    <div>
+        <input type="radio" name="number" value="3" id="three">
+        <label for="three">3</label>
+    </div>
+    <div>
+        <input type="radio" name="number" value="4" id="four">
+        <label for="four">4</label>
+    </div>
+    <div>
+        <input type="radio" name="number" value="5" id="five">
+        <label for="five">5</label>
+    </div>
+
+    <p>
+        <button id="btn2">Submit your answer</button>
+    </p>
+
+	<button onClick="window.location.reload();">Refresh Page</button>
+    <p id="output"></p>
+
+	<a href="./main.html">Go back to the main page. </a>
+
+	<br>
+
+    <a href="https://www.freepik.com/free-vector/cute-cat-sitting-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium-vector-flat-cartoon-style_22638092.htm#query=cat&position=3&from_view=keyword&track=sph">Image by catalyststuff</a> on Freepik
+	Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=6033">Pixabay</a>
+	<script>
+		var audio = document.getElementById("sound");
+		var played = {};
+
+		// generate a random number of images between 1 and 10
+		var numImages = Math.floor(Math.random() * 5) + 1;
+
+		// generate the HTML for the images and add them to the page
+		var imagesDiv = document.getElementById("images");
+		for (var i = 1; i <= numImages; i++) {
+			var img = document.createElement("img");
+			img.src = "cat.jpg";
+			img.className = "image";
+			img.id = "image" + i;
+			img.onmouseover = function() { playSound(this.id); };
+			imagesDiv.appendChild(img);
+			played[img.id] = false;
+		}
+
+		function playSound(imgId) {
+			if (!played[imgId]) {
+				audio.currentTime = 0;
+				audio.play();
+				played[imgId] = true;
+			}
+		}
+
+		function start() {
+			for (var i = 1; i <= numImages; i++) {
+				played["image" + i] = false;
+			}
+		}
+
+		// getting input
+
+		const btn2 = document.querySelector('#btn2');        
+        const radioButtons = document.querySelectorAll('input[name="number"]');
+		var correct_audio = document.getElementById("sound_correct");
+		var incorrect_audio = document.getElementById("sound_incorrect");
+        btn2.addEventListener("click", () => {
+            let selectedSize;
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            // show the output:
+			console.log(selectedSize)
+			if(selectedSize == numImages){
+				correct_audio.play();
+				output.innerText = `You selected ${selectedSize}. That is the correct answer! Refresh the page for a new problem.`
+			}
+			else{
+				incorrect_audio.play();
+				output.innerText = selectedSize ? `You selected ${selectedSize}. It is incorrect, try again!` : `You haven't selected`;
+			}
+
+
+        
+        });
+	</script>
+</body>
+</html>
