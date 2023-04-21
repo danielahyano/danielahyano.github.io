@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Counting cats</title>
+	<title>Counting Cats</title>
 	<style>
 		.image {
 			width: 300px;
@@ -9,11 +9,24 @@
 		}
 	</style>
 </head>
-<body>
-    <h1> Learning how to count</h1>
-    <h2> How to use: </h2>
+<body style="background-color:#FFECCE;">
+    <h1> Learning How to Count</h1>
+    <h2> How to Use: </h2>
         <p>
-            There is a button that you press to start. By moving the cursor, you will count how many cats there are in this page. 
+            You can press the Learn button to understand how to use the page. There is a button that you press to start.
+            By moving the cursor, you will count how many cats are on the page. When you find a cat, it will meow.
+            Press this button to see what it will sound like: <button onclick="playCat()">Cat Sound</button>
+        </p>
+
+        <p>
+            When you are done learning, you can practice. You will submit your answer.
+            Press this button to see what it will sound like when you select the correct answer: <button onclick="playCorrect()">Correct Answer Sound</button>
+            Press this button to see what it will sound like when you select the wrong answer: <button onclick="playWrong()">Wrong Answer Sound</button>
+        </p>
+
+        <p>
+            Refresh the page as many times as you want to continue practicing with new problems!
+            Have fun!
         </p>
     
     <a href="./pageone.html">Learn</a>
@@ -30,6 +43,21 @@
 				played1 = true;
 			}
 		}
+
+        function playCat() {
+            var cat = new Audio('cat_mew.mp3');
+            cat.play();
+        }
+
+        function playCorrect() {
+            var correct = new Audio('correct-6033.mp3');
+            correct.play();
+        }
+
+        function playWrong() {
+            var wrong = new Audio('negative_beeps-6008.mp3');
+            wrong.play();
+        }
 
 	
 	</script>
