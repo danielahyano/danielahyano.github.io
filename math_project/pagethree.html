@@ -22,11 +22,11 @@
 	<br><br>
 	<div id="images"></div>
 	<audio id="sound">
-		<source src="cat_mew.mp3" type="audio/mpeg">
+		<source src="../assets/audio/cat_mew.mp3" type="audio/mpeg">
 	</audio>
 
 	<p>There are three cats in this page.</p>
-	<a href="./main.html">Next page</a>
+	<a href="./index.html">Next page</a>
 	
 	<script>
 		var audio = document.getElementById("sound");
@@ -38,7 +38,7 @@
 		var imagesDiv = document.getElementById("images");
 		for (var i = 1; i <= numImages; i++) {
 			var img = document.createElement("img");
-			img.src = "cat.jpg";
+			img.src = "assets/images/cat.jpg";
 			img.className = "image";
 			img.id = "image" + i;
 			img.onmouseover = function() { playSound(this.id); };

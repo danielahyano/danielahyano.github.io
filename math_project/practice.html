@@ -23,15 +23,15 @@
 	<br><br>
 	<div id="images"></div>
 	<audio id="sound">
-		<source src="cat_mew.mp3" type="audio/mpeg">
+		<source src="../assets/audio/cat_mew.mp3" type="audio/mpeg">
 	</audio>
 
 	<audio id="sound_correct">
-		<source src="correct-6033.mp3" type="audio/mpeg">
+		<source src="../assets/audio/correct-6033.mp3" type="audio/mpeg">
 	</audio>
 
 	<audio id="sound_incorrect">
-		<source src="negative_beeps-6008.mp3" type="audio/mpeg">
+		<source src="../assets/audio/negative_beeps-6008.mp3" type="audio/mpeg">
 	</audio>
 
 	<p>How many cats are there?:</p>
@@ -63,7 +63,7 @@
 	<button onClick="window.location.reload();">Refresh Page</button>
     <p id="output"></p>
 
-	<a href="./main.html">Go back to the main page. </a>
+	<a href="./index.html">Go back to the main page. </a>
 
 	<br>
 
@@ -80,7 +80,7 @@
 		var imagesDiv = document.getElementById("images");
 		for (var i = 1; i <= numImages; i++) {
 			var img = document.createElement("img");
-			img.src = "cat.jpg";
+			img.src = "assets/images/cat.jpg";
 			img.className = "image";
 			img.id = "image" + i;
 			img.onmouseover = function() { playSound(this.id); };

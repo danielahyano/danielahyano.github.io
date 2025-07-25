@@ -7,54 +7,173 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+  body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  }
+  .modern-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 2px 16px rgba(161,140,209,0.10);
+    margin: 16px auto 24px auto;
+    max-width: 900px;
+    padding: 0.5rem 2rem;
+  }
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar-links .nav-link {
+    color: #4b3869;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .navbar-links .nav-link:hover, .navbar-links .nav-link:focus {
+    background: #fbc2eb;
+    color: #222;
+    text-decoration: none;
+  }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-custom">
-    <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>                        
-            </button>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                 <li class="active">
-                    <a  style="color:black" href="./index.html">
-                    Back
-                    </a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-            </ul>
-          </div>
-        </div>
-      </nav>
+<nav class="modern-navbar">
+  <div class="navbar-container">
+    <ul class="navbar-links">
+      <li><a class="nav-link" href="./index.html">Home</a></li>
+    </ul>
+  </div>
+</nav>
   
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-12 text-left" style="padding-left:150px; padding-right:400px"> 
       <h1>Table tennis aerodynamics</h1>
-      <p>Github page: 
-        <a class="linkcolor"  href=https://github.com/danielahyano/table_tennis_aerodynamics> Table tennis aerodynamics </a> </p>
-  This project envolves three of my passions: table tennis, physics, and coding. 
-  As a table tennis player for more than 15 years, I have some intuition about how the spin works, 
-  and building this simulation was fun and helped me understand the theory of something I have always approached using my "feeling".
+      <p>
+        <b>Table tennis aerodynamics</b> is a project that brings together three of my passions: table tennis, physics, and coding. As a table tennis player for over 15 years, I’ve always been fascinated by the physics behind the game—especially the way spin transforms the ball’s flight. In this project, I combined my experience as a player with my love for science and programming to simulate and visualize the aerodynamics of table tennis serves.
+      </p>
+      <p>
+        The images below are simulation results generated using my own code. Each animation shows how different types of spin and initial conditions affect the ball’s trajectory.
+      </p>
+      <p>
+        <b>Want to see the code or try it yourself?</b> Check out the project on GitHub:
+        <a class="linkcolor" href="https://github.com/danielahyano/table_tennis_aerodynamics" target="_blank" rel="noopener">danielahyano/table_tennis_aerodynamics</a>
+      </p>
+
+<h2>Introduction</h2>
+<p>
+  In table tennis, the ball’s flight is shaped by gravity, air resistance (drag), and the Magnus effect from spin. Professional players use a mix of backspin, topspin, and sidespin—especially on serves—to create unpredictable and fascinating trajectories. In this project, I explored the aerodynamics of table tennis serves by simulating ball trajectories under different spins and initial conditions.
+</p>
+
+<h2>Physics Background</h2>
+<p>
+  The motion of a table tennis ball is governed by Newton’s second law:
+  \[
+    \frac{d\vec{r}}{dt} = \vec{v} \\
+  \]
+  \[
+   \frac{d\vec{v}}{dt} = \frac{1}{m}\vec{F}(\vec{v})
+   \]
+  where \(\vec{F}(\vec{v})\) includes gravity, drag, and spin forces. The ball’s mass is 2.7 grams and its diameter is 40 mm [1].
+</p>
+
+<h3>Forces on the Ball</h3>
+<ul>
+  <li><b>Gravity:</b></li>
+</ul>
+<br>
+\[ \vec{F}_G = -mg \hat{y} \]
+<br>
+<ul>
+  <li><b>Drag:</b></li>
+</ul>
+<br>
+\[ \vec{F}_D = -\frac{1}{2} C_D \rho A |\vec{v}| \vec{v} \]
+<br>
+<p>where \(\rho\) is air density, \(A\) is cross-sectional area, and \(C_D\) is the drag coefficient.<br>
+For no spin:</p>
+<br>
+\[ C_D = 0.155 + \frac{0.346}{1 + \exp\left(\frac{v-12.19}{1.309}\right)} \]
+<br>
+<ul>
+  <li><b>Magnus (Spin) Force:</b></li>
+</ul>
+<br>
+\[ \vec{F}_M = S_0 \rho (\vec{\omega} \times \vec{v}) \]
+<br>
+<p>where \(S_0 = -0.7R^3\) [2], \(\vec{\omega}\) is the spin vector, and \(R\) is the ball’s radius.<br>
+For high spin (\(S = R/v_0 > 0.05\) and \(v > 10.29\) m/s):</p>
+<br>
+\[ C_D = 0.4127 S (=0.3056) \]
+<br>
+
+<h3>Table Bounce</h3>
+<p>
+  When the ball bounces, both linear and angular momentum are considered:
+  <ul>
+    <li><b>Linear impulse:</b></li>
+  </ul>
   <br>
-  The animations all have the same initial velocity, but different spin, and showcase how the trajectories are affected.
-   </p>
-    <img src="./pictures/tt_1.gif" alt="Annimation of table tennis trajectory" width="600">
-    <img src="./pictures/tt_2.gif" alt="Annimation of table tennis trajectory" width="600">
-    <img src="./pictures/tt_3.gif" alt="Annimation of table tennis trajectory" width="600">
+  \[ \int F\,dt = m(\vec{v}_1 - \vec{v}_2) \]
+  <br>
+  <ul>
+    <li><b>Angular impulse:</b></li>
+  </ul>
+  <br>
+  \[ \int \sum R \times F\,dt = I(\vec{\omega}_1 - \vec{\omega}_2) \]
+  <br>
+  <p>where \(I = \frac{2}{3}mR^2\) for a hollow sphere.</p>
+  Assuming a perfectly elastic collision, momentum is conserved, allowing us to solve for post-bounce velocities and spins.
+</p>
+
+<h3>Numerical Solution</h3>
+<p>
+  To simulate the ball’s path, I used the Euler midpoint method to numerically integrate the equations of motion, accounting for all forces and the effects of spin and bounce.
+</p>
+
+
+    <img src="assets/images/tt_1.gif" alt="Annimation of table tennis trajectory" width="600">
+    <img src="assets/images/tt_2.gif" alt="Annimation of table tennis trajectory" width="600">
+    <img src="assets/images/tt_3.gif" alt="Annimation of table tennis trajectory" width="600">
   </div>
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-  <p>©️ Daniela Hikari Yano 2023</p>
+<footer class="modern-footer">
+  <div class="footer-content">
+    <span>©️ Daniela Hikari Yano 2024</span>
+    <span class="footer-links">
+      <a href="https://www.linkedin.com/in/daniela-yano/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#0A66C2" style="vertical-align:middle;margin-right:4px;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+        LinkedIn
+      </a>
+      &nbsp;|&nbsp;
+      <a href="https://github.com/danielahyano" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#181717" style="vertical-align:middle;margin-right:4px;"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.218.694.825.576 4.765-1.588 8.2-6.084 8.2-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </span>
+  </div>
 </footer>
 
 </body>
