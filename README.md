@@ -1,65 +1,46 @@
-# React Website Starter Template
+# Astro Starter Kit: Basics
 
-This is a modern React starter template for your personal or project website.
-
-## Features
-- React 18+
-- React Router for multi-page navigation
-- Material-UI (MUI) for beautiful, responsive components
-- Organized folder structure (assets, components, pages)
-- Easy deployment to GitHub Pages
-
-## Getting Started
-
-### 1. Clone and Install
 ```sh
-npx create-react-app my-website
-cd my-website
-npm install @mui/material @emotion/react @emotion/styled react-router-dom
+npm create astro@latest -- --template basics
 ```
 
-### 2. Project Structure
-```
-my-website/
-  ├── public/
-  │   └── index.html
-  ├── src/
-  │   ├── assets/
-  │   │   └── images/
-  │   ├── components/
-  │   │   └── Navbar.jsx
-  │   ├── pages/
-  │   │   ├── Home.jsx
-  │   │   └── Projects.jsx
-  │   ├── App.jsx
-  │   └── index.js
-  ├── package.json
-  └── README.md
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
 ```
 
-### 3. Development
-```sh
-npm start
-```
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-### 4. Deployment (GitHub Pages)
-```sh
-npm install --save gh-pages
-```
-Add to `package.json`:
-```
-"homepage": "https://yourusername.github.io/my-website",
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
-```
-Then run:
-```sh
-npm run deploy
-```
+## 🧞 Commands
 
----
+All commands are run from the root of the project, from a terminal:
 
-## Example Components
-See `src/components/Navbar.jsx` and `src/pages/Home.jsx` for examples.
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
