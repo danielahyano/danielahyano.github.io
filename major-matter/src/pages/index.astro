@@ -1,0 +1,489 @@
+---
+// 1. Welcome to the Astro Frontmatter! 
+// This is your "backend" space inside the file where you can run JavaScript or import assets.
+const pageTitle = "my digital corner";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    
+    <main class="bento-container">
+      
+      <section class="bento-card profile-card">
+        <h2>hello, i'm dani! </h2>
+		<p>i am a physics phd student, and when im not working im usually crocheting, playing table tennis, or going for walks. </p>
+		<p>this is just a little space with collections of things i like. </p>
+      </section>
+
+	  <section class="bento-card music-card">
+		<h3>now playing 🎧</h3>
+		<p class="song-link-wrapper">
+			 <a href="https://open.spotify.com/track/0is4ka3uSbBT04pC2WFsp3?si=zxFF4EzGTFao51MRkzW_lg&rowId=acad9cec0f6efc29ce94&context=spotify%3Aplaylist%3A37i9dQZF1F5p3rmiWPIYgZ" target="_blank">🎵 Rock it - Vance Joy</a>
+		</p>
+		<br>
+		<h3>feeling: ✨ happy</h3>
+	</section>
+
+	<section class="bento-card marquee-card">
+		<div class="marquee-track">
+		<div class="marquee-content">
+		✨ hi! welcome to my digital corner ✨ &nbsp;
+		</div>
+		<div class="marquee-content" aria-hidden="true">
+		✨ hi! welcome to my digital corner ✨&nbsp;
+		</div>
+		<div class="marquee-content" aria-hidden="true">
+		✨ hi! welcome to my digital corner ✨ &nbsp;
+		</div>
+	</div>
+	</section>
+
+      <section class="bento-card nav-card">
+        <h3>explore</h3>
+        <ul>
+          <li><a href="/lists">my lists</a></li>
+        </ul>
+      </section>
+
+
+	<section class="bento-card terminal-card">
+  <div class="terminal-header">
+    <div class="terminal-buttons">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+    </div>
+    <span class="terminal-title">dani@-core:~</span>
+  </div>
+  
+  <div class="terminal-body">
+    <div class="terminal-log" id="terminal-log">
+      <div>welcome to dani's core terminal v1.0.0</div>
+      <div class="help-hint">type <span class="highlight">help</span> to view available system commands.</div>
+    </div>
+    
+    <div class="terminal-input-line">
+      <span class="terminal-prompt">dani@root:~$</span>
+      <input type="text" id="terminal-input" autocomplete="off" autofocus placeholder="..." />
+    </div>
+  </div>
+</section>
+    </main>
+
+  </body>
+</html>
+
+<style>
+  /* Base Reset & Vibe Setup */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Space Mono', monospace;
+    background-color: #e2e8f0; /* A soft grey for now; we'll add your dithered nature background later! */
+    color: #1a1a1a;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* The Magical Bento Box Grid System */
+  .bento-container {
+    max-width: 1000px;
+    width: 100%;
+    display: grid;
+    /* This creates a robust 3-column layout grid */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5rem; /* The spacing between your bento cards */
+  }
+
+  /* The Scrapbook Comic Border Style from your image */
+  .bento-card {
+    background-color: #ffffff;
+    border: 3px solid #1a1a1a;
+    padding: 1.5rem;
+    box-shadow: 5px 5px 0px #1a1a1a; /* Gives that awesome retro 3D pop effect */
+    transition: transform 0.1s ease;
+  }
+
+  /* Subtle hover interaction to make it feel alive */
+  .bento-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px #1a1a1a;
+  }
+
+  /* Controlling how many grid blocks a card stretches across */
+  .profile-card {
+    grid-column: span 2; /* Stretches across 2 columns */
+  }
+
+  .status-card {
+    grid-column: span 1;
+  }
+
+  .nav-card {
+    grid-column: span 1;
+  }
+
+  .favorites-card {
+    grid-column: span 2;
+  }
+
+  /* Little UI Details inside the cards */
+  .avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    border: 2.5px solid #1a1a1a;
+    background-color: #cbd5e1;
+    margin-bottom: 1rem;
+  }
+
+  h2, h3 {
+    margin-bottom: 0.5rem;
+    text-transform: lowercase;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
+
+  a {
+    color: #10b981; /* Accent green links */
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+  }
+
+  td {
+    padding: 0.4rem;
+    border-bottom: 1px dashed #cbd5e1;
+  }
+
+.song-link-wrapper {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Chat Container Box */
+.guestbook-card.chat-style {
+  grid-column: span 2;
+  background-color: #ffffff; /* Very pale lime background matching your image */
+  border: 3px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  height: 300px; /* Locked height so it behaves like a chat client */
+  padding: 0; /* Clear default padding for structural header/footer layout */
+  overflow: hidden;
+}
+
+/* Chat Header Bar */
+.chat-header {
+  background-color: #ffffff /* Lime green header tab */
+  border-bottom: 3px solid #1a1a1a;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.chat-status {
+  font-size: 0.75rem;
+  background: #22c55e;
+  color: white;
+  padding: 2px 6px;
+  border: 1.5px solid #1a1a1a;
+  font-weight: bold;
+}
+
+/* Scrollable Chat Window */
+.chat-history {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 100% !important; /* Let it fill the card width fully */
+}
+
+/* Individual Discord-Style Chat Bubbles */
+.guestbook-entry {
+  background: #ffffff;
+  border: 2px solid #1a1a1a;
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+  box-shadow: 2px 2px 0px #1a1a1a;
+  border-radius: 4px;
+  width: fit-content;
+  max-width: 85%;
+}
+
+.entry-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #4d7c0f; /* Dark forest green text for user names */
+  margin-bottom: 0.15rem;
+}
+
+.entry-text {
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  padding-left: 0;
+  margin: 0;
+  word-break: break-word;
+}
+
+/* Bottom Chat Input Dock */
+.chat-input-bar {
+  background: #ffffff;
+  border-top: 3px solid #1a1a1a;
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  max-width: 100% !important; /* Overwrite the old max-width block rule */
+  margin: 0;
+}
+
+.chat-name-input {
+  width: 100px !important;
+  flex-shrink: 0;
+}
+
+.chat-msg-input {
+  flex: 1;
+}
+
+.chat-name-input, .chat-msg-input, #stamp-dropdown {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  padding: 0.4rem;
+  border: 2px solid #1a1a1a;
+  background: white;
+}
+
+#stamp-dropdown {
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Compact Retro Arrow Send Button */
+.chat-send-btn {
+  background: #84cc16;
+  border: 2px solid #1a1a1a;
+  padding: 0 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px #1a1a1a;
+}
+
+.chat-send-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #1a1a1a;
+}
+
+/* 1. Style the outer container block */
+.marquee-card {
+  grid-column: span 3; /* Stretches nicely across the entire width */
+  background: #fef08a; /* A soft retro yellow tone */
+  border: 2px solid #1a1a1a;
+  padding: 0.5rem 0 !important; /* Tight vertical padding, clears side padding */
+  overflow: hidden; /* Hides the text when it slides outside the box edges */
+  display: flex;
+}
+
+/* 2. Create the horizontal conveyer-belt track */
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+/* 3. Style the moving phrase strings */
+.marquee-content {
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  font-size: 0.9rem;
+  white-space: nowrap; /* Prevents the text from wrapping onto a second line */
+  text-transform: lowercase;
+  
+  /* Attaches our custom animation loop */
+  animation: scroll-right 15s linear infinite;
+}
+
+/* 4. Define the keyframes math to make it glide seamlessly to the right */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%); /* Starts shifted halfway back */
+  }
+  100% {
+    transform: translateX(0%); /* Glides smoothly forward to zero alignment */
+  }
+}
+/* Terminal Container */
+.terminal-card {
+  grid-column: span 2; /* Adjust to span 3 if you want it full-width! */
+  background: #111827; /* Deep midnight-black background */
+  color: #f3f4f6;
+  border: 3px solid #1a1a1a;
+  box-shadow: 4px 4px 0px #1a1a1a;
+  padding: 0 !important; /* Clears padding so header spans edge-to-edge */
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  overflow: hidden;
+}
+
+/* Window Bar Header */
+.terminal-header {
+  background: #e5e7eb;
+  border-bottom: 3px solid #1a1a1a;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.terminal-buttons .dot {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 50%;
+}
+.dot.red { background: #ef4444; }
+.dot.yellow { background: #eab308; }
+.dot.green { background: #22c55e; }
+
+.terminal-title {
+  color: #1a1a1a;
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Interior Terminal Display */
+.terminal-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.terminal-log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.help-hint {
+  color: #9ca3af;
+  font-size: 0.8rem;
+}
+
+.highlight {
+  color: #a3e635; /* Crisp lime highlight text */
+}
+
+/* Command Entry Bar */
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.terminal-prompt {
+  color: #38bdf8; /* Bright cyan terminal prompt */
+  font-weight: bold;
+}
+
+#terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  outline: none;
+  padding: 0;
+}
+</style>
+
+<script is:inline>
+const termInput = document.getElementById('terminal-input');
+  const termLog = document.getElementById('terminal-log');
+
+  // Command configurations map
+  const commands = {
+    help: "available commands: <br> <li><span class='highlight'>about</span> - learn about my phd research</li> <li><span class='highlight'>skills</span> - see my technical compute stack</li> <li><span class='highlight'>clear</span> - flush the screen buffer</li>",
+    about: "dani is a physics ph.d. student at rice university working on high energy physics collision at cern",
+    skills: "languages: [python, c++, sql]<br>",
+  };
+
+  termInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const inputVal = termInput.value.trim().toLowerCase();
+      
+      // 1. Log the command echo line onto the board
+      termLog.innerHTML += `<div class="terminal-input-line"><span class="terminal-prompt">dani@root:~$</span> <span>${inputVal}</span></div>`;
+      
+      // 2. Compute command outputs
+      if (inputVal === 'clear') {
+        termLog.innerHTML = '';
+      } else if (inputVal in commands) {
+        termLog.innerHTML += `<div>${commands[inputVal]}</div>`;
+      } else if (inputVal === '') {
+        // Do nothing if empty enter is pressed
+      } else {
+        termLog.innerHTML += `<div style="color: #ef4444;">bash: command not found: ${inputVal}. type <span class="highlight">help</span> for systems listing.</div>`;
+      }
+      
+      // 3. Clear prompt line and force layout to track bottom scroll
+      termInput.value = '';
+      const body = document.querySelector('.terminal-body');
+      body.scrollTop = body.scrollHeight;
+    }
+  });
+</script>

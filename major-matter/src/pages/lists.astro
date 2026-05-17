@@ -1,0 +1,224 @@
+---
+// src/pages/lists.astro
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dani's lists and recipes 📌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="board-nav">
+    <a href="/" class="retro-btn">← go home</a>
+    <span class="board-title">dani's bulletin board</span>
+  </header>
+
+  <main class="bulletin-board">
+    
+    <div class="sticky-note">
+      <div class="pushpin"></div>
+      <h3 class="note-title">recipes to try</h3>
+      <ul class="note-list">
+        <li><a href="https://www.justonecookbook.com/dorayaki-japanese-red-bean-pancake/">dorayaki</a></li>
+        <li><a href="https://lifemadesimplebakes.com/better-than-takeout-fried-rice/">take out fried rice</a></li>
+      </ul>
+    </div>
+
+    <div class="sticky-note">
+      <div class="pushpin"></div>
+      <h3 class="note-title">shopping list</h3>
+      <ul class="note-list standard-list">
+        <li class="crossed-out">mushrooms</li>
+        <li class="crossed-out">black beans</li>
+        <li>ketchup</li>
+        <li>paper towels</li>
+      </ul>
+    </div>
+
+    <div class="sticky-note">
+      <div class="pushpin"></div>
+      <h3 class="note-title">crochet queue</h3>
+      <ul class="note-list">
+        <li><a href="https://br.pinterest.com/pin/908671662458889517/">crochet flower top</a></li>
+        <li><a href="https://br.pinterest.com/pin/908671662458135858/">jewerly hanger</a></li>
+      </ul>
+    </div>
+
+    <div class="sticky-note">
+      <div class="pushpin"></div>
+      <h3 class="note-title">life reminders</h3>
+      <ul class="note-list standard-list">
+        <li>be happy</li>
+        <li>clean up my code</li>
+      </ul>
+    </div>
+
+  </main>
+
+</body>
+</html>
+
+<style>
+  /* 1. Global Setup & Dithered Striped Background */
+  body {
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Space Mono', monospace;
+    background-color: #cbd5e1;
+    /* This creates the vintage vertical pinstripe background look */
+    background-image: linear-gradient(90deg, #b8c2cc 1px, transparent 1px);
+    background-size: 8px 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  /* 2. Navigation Header Row */
+  .board-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+    background: white;
+    padding: 0.5rem;
+    border: 2px solid #1a1a1a;
+    box-shadow: 3px 3px 0px #1a1a1a;
+  }
+
+  .board-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: lowercase;
+  }
+
+  .retro-btn {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    background: white;
+    border: 2px solid #1a1a1a;
+    padding: 4px 12px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 2px 2px 0px #1a1a1a;
+    cursor: pointer;
+  }
+
+  .retro-btn:hover {
+    background: #f1f5f9;
+  }
+
+  /* 3. The Bulletin Board Matrix Grid Layout */
+  .bulletin-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 1rem;
+  }
+
+  /* 4. Realistic Retro Sticky Note Graphic */
+  .sticky-note {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    padding: 2rem 1.25rem 1.5rem 1.25rem;
+    position: relative;
+    box-sizing: border-box;
+    
+    /* Double shadow combo to simulate a real paper lifting effect */
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.05),
+      2px 15px 20px -5px rgba(0, 0, 0, 0.15);
+      
+    /* Subtle paper curl style at the bottom right corner */
+    border-bottom-right-radius: 25px 4px;
+    transition: transform 0.2s ease;
+  }
+
+  /* Let them tilt slightly down the row for an organic look */
+  .sticky-note:nth-child(even) {
+    transform: rotate(0deg);
+  }
+  .sticky-note:nth-child(odd) {
+    transform: rotate(0deg);
+  }
+
+  .sticky-note:hover {
+    transform: scale(1.02) rotate(0deg);
+    z-index: 10;
+  }
+
+  /* 5. The Blocky Pushpin Detail */
+  .pushpin {
+    width: 14px;
+    height: 14px;
+    background: #1a1a1a; /* Black metallic pin head */
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 4px 8px 0px rgba(0, 0, 0, 0.2); /* Pin drop-shadow */
+  }
+
+  .pushpin::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 6px;
+    background: #64748b;
+    bottom: -5px;
+    left: 6px;
+  }
+
+  /* 6. Typography & Text Links Inside Notes */
+  .note-title {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 700;
+    border-bottom: 1px dashed #cbd5e1;
+    padding-bottom: 0.25rem;
+    text-align: left;
+  }
+
+  .note-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    text-align: left;
+  }
+
+  .note-list li {
+    line-height: 1.4;
+  }
+
+  .note-list a {
+    color: #2563eb; /* Classic blue internet hyperlink color */
+    text-decoration: underline;
+  }
+
+  .note-list a:hover {
+    color: #1d4ed8;
+  }
+
+  /* Specific styles for simple text item updates */
+  .standard-list li::before {
+    content: "• ";
+    color: #64748b;
+  }
+
+  /* Retro Completed / Crossed Out Effect from your image */
+  .crossed-out, .completed {
+    text-decoration: line-through !important;
+    color: #64748b !important;
+    opacity: 0.75;
+  }
+</style>
