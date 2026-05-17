@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-j7pv25f6> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>my digital corner</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/index.ppsjAjTr.css"></head> <body data-astro-cid-j7pv25f6> <main class="bento-container" data-astro-cid-j7pv25f6> <section class="bento-card profile-card" data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>hello, i'm dani! </h2> <p data-astro-cid-j7pv25f6>i am a physics phd student, and when im not working im usually crocheting, playing table tennis, or going for walks. </p> <p data-astro-cid-j7pv25f6>this is just a little space with collections of things i like. </p> </section> <section class="bento-card music-card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>now playing 🎧</h3> <p class="song-link-wrapper" data-astro-cid-j7pv25f6> <a href="https://open.spotify.com/track/0is4ka3uSbBT04pC2WFsp3?si=zxFF4EzGTFao51MRkzW_lg&rowId=acad9cec0f6efc29ce94&context=spotify%3Aplaylist%3A37i9dQZF1F5p3rmiWPIYgZ" target="_blank" data-astro-cid-j7pv25f6>🎵 Rock it - Vance Joy</a> </p> <br data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>feeling: ✨ happy</h3> </section> <section class="bento-card marquee-card" data-astro-cid-j7pv25f6> <div class="marquee-track" data-astro-cid-j7pv25f6> <div class="marquee-content" data-astro-cid-j7pv25f6>
+✨ hi! welcome to my digital corner ✨ &nbsp;
+</div> <div class="marquee-content" aria-hidden="true" data-astro-cid-j7pv25f6>
+✨ hi! welcome to my digital corner ✨&nbsp;
+</div> <div class="marquee-content" aria-hidden="true" data-astro-cid-j7pv25f6>
+✨ hi! welcome to my digital corner ✨ &nbsp;
+</div> </div> </section> <section class="bento-card nav-card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>explore</h3> <ul data-astro-cid-j7pv25f6> <li data-astro-cid-j7pv25f6><a href="/lists" data-astro-cid-j7pv25f6>my lists</a></li> </ul> </section> <section class="bento-card terminal-card" data-astro-cid-j7pv25f6> <div class="terminal-header" data-astro-cid-j7pv25f6> <div class="terminal-buttons" data-astro-cid-j7pv25f6> <span class="dot red" data-astro-cid-j7pv25f6></span> <span class="dot yellow" data-astro-cid-j7pv25f6></span> <span class="dot green" data-astro-cid-j7pv25f6></span> </div> <span class="terminal-title" data-astro-cid-j7pv25f6>dani@-core:~</span> </div> <div class="terminal-body" data-astro-cid-j7pv25f6> <div class="terminal-log" id="terminal-log" data-astro-cid-j7pv25f6> <div data-astro-cid-j7pv25f6>welcome to dani's core terminal v1.0.0</div> <div class="help-hint" data-astro-cid-j7pv25f6>type <span class="highlight" data-astro-cid-j7pv25f6>help</span> to view available system commands.</div> </div> <div class="terminal-input-line" data-astro-cid-j7pv25f6> <span class="terminal-prompt" data-astro-cid-j7pv25f6>dani@root:~$</span> <input type="text" id="terminal-input" autocomplete="off" autofocus placeholder="..." data-astro-cid-j7pv25f6> </div> </div> </section> </main>  <script>
+const termInput = document.getElementById('terminal-input');
+  const termLog = document.getElementById('terminal-log');
+
+  // Command configurations map
+  const commands = {
+    help: "available commands: <br> <li><span class='highlight'>about</span> - learn about my phd research</li> <li><span class='highlight'>skills</span> - see my technical compute stack</li> <li><span class='highlight'>clear</span> - flush the screen buffer</li>",
+    about: "dani is a physics ph.d. student at rice university working on high energy physics collision at cern",
+    skills: "languages: [python, c++, sql]<br>",
+  };
+
+  termInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      const inputVal = termInput.value.trim().toLowerCase();
+      
+      // 1. Log the command echo line onto the board
+      termLog.innerHTML += `<div class="terminal-input-line"><span class="terminal-prompt">dani@root:~$</span> <span>${inputVal}</span></div>`;
+      
+      // 2. Compute command outputs
+      if (inputVal === 'clear') {
+        termLog.innerHTML = '';
+      } else if (inputVal in commands) {
+        termLog.innerHTML += `<div>${commands[inputVal]}</div>`;
+      } else if (inputVal === '') {
+        // Do nothing if empty enter is pressed
+      } else {
+        termLog.innerHTML += `<div style="color: #ef4444;">bash: command not found: ${inputVal}. type <span class="highlight">help</span> for systems listing.</div>`;
+      }
+      
+      // 3. Clear prompt line and force layout to track bottom scroll
+      termInput.value = '';
+      const body = document.querySelector('.terminal-body');
+      body.scrollTop = body.scrollHeight;
+    }
+  });
+</script></body></html>
