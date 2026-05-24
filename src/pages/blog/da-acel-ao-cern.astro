@@ -1,0 +1,134 @@
+---
+// src/pages/blog/da-acel-ao-cern.astro
+---
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Da ACEL ao CERN // dani</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="article-container">
+    <div class="nav-header">
+      <a href="/blog" class="retro-btn">← go back</a>
+    </div>
+
+    <article class="bento-card article-content">
+      <header class="article-header">
+        <div class="post-meta">24 de Maio, 2026 • 🏓 desporto & ciência</div>
+        <h1>Da ACEL ao CERN: O que a minha versão de 14 anos precisava de saber</h1>
+      </header>
+
+      <div class="article-body">
+        <p class="lead-text">Escrevo isso pensando na minha versão de 14 anos, que sonhava em ser atleta olímpica; e que precisava saber que existiam outros caminhos igualmente incríveis.</p>
+        
+        <p>Comecei a jogar tênis de mesa aos sete anos na Associação Cultural e Esportiva de Londrina (ACEL). O primeiro contato com o esporte aconteceu por conta do meu irmão, que já praticava. No começo, eu treinava de noite, duas vezes na semana, nas terças e quintas-feiras com o Tio Ilson, que organizava uma fila para revezarmos na mesa. No ano seguinte, comecei a treinar todos os dias no período da tarde, em uma turma grande. Continuei treinando, comecei a competir — primeiro nos campeonatos paranaenses, e logo depois em nível nacional. O esporte foi ficando sério, e aos 10 anos disputei meu primeiro campeonato internacional, um sul-americano no Paraguai.</p>
+
+        <p>Aos 11 anos, por conta do trabalho do meu pai, nos mudamos para o Rio Grande do Sul, onde passei a treinar com o Jorge Fanck. Continuei competindo bastante e depois retornei a Londrina para fazer o ensino médio. Naquela época, meu objetivo era ser atleta quando crescesse. Treinava cinco vezes por semana, várias horas por dia, me dedicando muito ao tênis de mesa com o sonho de me tornar atleta profissional e viver do esporte. Joguei pela seleção brasileira de base em vários campeonatos na América Latina, e cheguei a participar de um Mundial Juvenil na África do Sul em 2016.</p>
+
+        <p>Eu faltava muito na escola por conta das viagens para campeonatos, mas sempre estudei durante os intervalos e fins de semana, muitas vezes nas arquibancadas dos ginásios. Quando tinha 16 anos, decidi que queria estudar fora. Pesquisei muito na internet sobre as oportunidades e como funcionava o processo. Descobri que precisava fazer o TOEFL e o ACT/SAT, e que nas universidades americanas as atividades extracurriculares eram tão importantes quanto o desempenho acadêmico. Me dediquei muito a essa jornada: participei de iniciação científica, me preparei para os testes e fiz o processo de aplicação. Fui aceita em Barnard College com bolsa completa.</p>
+
+        <p>Aos 19 anos, me mudei para Nova Iorque, onde cursei a graduação e me formei com diploma duplo em Física e Ciência da Computação. Me dediquei muito aos estudos, fiz pesquisa desde o primeiro ano e no terceiro ano fui selecionada para um programa de verão na Caltech, trabalhando com o LIGO. Hoje, aos 25 anos, estou no terceiro ano de doutorado em Física na Rice University, atualmente morando na França/Suíça, trabalhando no CERN.</p>
+
+        <p>Compartilho isso porque muitas vezes pode parecer que uma carreira precisa ser uma coisa ou outra, ou que se dedicar tanto ao esporte é um desperdício de tempo. Para mim, os dois foram complementares: o esporte me ensinou disciplina e me deu uma independência que carrego até hoje. A verdade é que apenas uma pequena parte dos atletas juvenis se torna profissional — mas o tênis de mesa sempre foi muito mais do que competir. Me mudei para um país novo sem conhecer ninguém, o que não foi fácil, mas o esporte foi o fio condutor: competi na NCTTA, fui presidente do clube de tênis de mesa em Columbia e depois em Rice, e fiz amizades que carrego até hoje. O tênis de mesa me deu uma comunidade antes mesmo de eu saber que precisava de uma.</p>
+      </div>
+    </article>
+  </main>
+
+</body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Space Mono', monospace;
+    background-color: #e2e8f0;
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .article-container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .retro-btn {
+    display: inline-block;
+    font-size: 0.85rem;
+    background: white;
+    border: 2px solid #1a1a1a;
+    padding: 6px 14px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 2px 2px 0px #1a1a1a;
+    font-weight: bold;
+    align-self: flex-start;
+  }
+
+  .bento-card {
+    background: white;
+    border: 3px solid #1a1a1a;
+    padding: 2rem;
+    box-shadow: 4px 4px 0px #1a1a1a;
+    text-align: left;
+  }
+
+  .article-header h1 {
+    margin: 0.5rem 0 1.5rem 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .post-meta {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: bold;
+  }
+
+  .article-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin-bottom: 1.2rem;
+  }
+
+  .lead-text {
+    font-size: 1.1rem !important;
+    font-weight: bold;
+    color: #2563eb !important;
+    border-left: 4px solid #1a1a1a;
+    padding-left: 1rem;
+  }
+
+  /* Estilização Neo-Brutalista para as Imagens do Artigo */
+  .article-image-box {
+    border: 2px solid #1a1a1a;
+    padding: 0.5rem;
+    background: #f8fafc;
+    margin: 1.5rem 0;
+    box-shadow: 3px 3px 0px #1a1a1a;
+  }
+
+  .article-image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid #1a1a1a;
+  }
+
+  .image-caption {
+    margin: 0.5rem 0 0 0 !important;
+    font-size: 0.8rem !important;
+    color: #4b5563;
+    text-align: center;
+  }
+</style>

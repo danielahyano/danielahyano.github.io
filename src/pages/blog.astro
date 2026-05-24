@@ -1,0 +1,166 @@
+---
+// src/pages/blog.astro
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dani // blog ✍️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <main class="blog-container">
+    <div class="nav-header">
+      <a href="/" class="retro-btn">← back home</a>
+    </div>
+
+    <header class="blog-header">
+      <h1>✍️ blog posts</h1>
+      <p>a collection of stories</p>
+    </header>
+
+    <div class="blog-grid">
+      <article class="bento-card post-card">
+        <div class="post-card-header">
+          <span class="post-meta">May 24, 2026 • 🏓 sports & science</span>
+          <span class="lang-badge">in Portuguese</span>
+        </div>
+        <h2><a href="/blog/da-acel-ao-cern">From ACEL to CERN: What my 14-year-old self needed to know</a></h2>
+        <p>I write this thinking about my 14-year-old self, who dreamed of being an Olympian, and needed to know that there were other equally incredible paths out there...</p>
+        <a href="/blog/da-acel-ao-cern" class="read-more">read full article →</a>
+      </article>
+
+      <article class="bento-card post-card placeholder-card">
+        <p class="placeholder-text">[ next article coming soon... ]</p>
+      </article>
+    </div>
+  </main>
+
+</body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Space Mono', monospace;
+    background-color: #e2e8f0;
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .blog-container {
+    width: 100%;
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .retro-btn {
+    display: inline-block;
+    font-size: 0.85rem;
+    background: white;
+    border: 2px solid #1a1a1a;
+    padding: 6px 14px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 2px 2px 0px #1a1a1a;
+    font-weight: bold;
+  }
+
+  .blog-header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+  }
+
+  .blog-header p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.95rem;
+  }
+
+  .blog-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .bento-card {
+    background: white;
+    border: 3px solid #1a1a1a;
+    padding: 1.5rem;
+    box-shadow: 4px 4px 0px #1a1a1a;
+    text-align: left;
+  }
+
+  .post-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .post-card h2 {
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+  }
+
+  .post-card h2 a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  .post-card h2 a:hover {
+    text-decoration: underline;
+    color: #2563eb;
+  }
+
+  .post-meta {
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-weight: bold;
+  }
+
+  /* Slick mini-badge indicating the dual languages */
+  .lang-badge {
+    font-size: 0.7rem;
+    background: #ecfccb;
+    border: 1.5px solid #1a1a1a;
+    padding: 2px 6px;
+    font-weight: bold;
+  }
+
+  .post-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #374151;
+    margin-bottom: 1rem;
+  }
+
+  .read-more {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #2563eb;
+    text-decoration: none;
+  }
+
+  .placeholder-card {
+    background: #f1f5f9;
+    border-style: dashed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .placeholder-text {
+    color: #94a3b8 !important;
+    margin: 0 !important;
+  }
+</style>
