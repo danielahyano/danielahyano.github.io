@@ -1,0 +1,125 @@
+---
+// src/pages/blog/from-acel-to-cern.astro
+---
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My table tennis trajectory // dani</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main class="article-container">
+    <div class="nav-header">
+      <a href="/blog" class="retro-btn">← return</a>
+    </div>
+
+    <article class="bento-card article-content">
+      <header class="article-header">
+        <div class="post-meta">May 24th, 2026 • 🏓 </div>
+        <h1>How table tennis has been part of my life</h1>
+      </header>
+
+      <div class="article-body">        
+        <p>I started playing table tennis at seven years old at the Associação Cultural e Esportiva de Londrina (ACEL), in Brazil. My first contact with the sport happened because of my brother, who was already playing. At first, I trained at night, twice a week, but I soon joined the team and started training every day in the afternoons. I quickly began competing — first in state championships in Paraná, then at the national level. The sport started getting serious, and at 10 I played my first international tournament, a South American championship in Paraguay.</p>
+        <p>At 11, because of my father's work, we moved to Rio Grande do Sul. I became Brazilian champion and South American runner-up in the under-13 category, then returned to Londrina for high school. Back then, my goal was to be an athlete when I grew up. I trained five times a week, many hours a day, fully committed to table tennis with the dream of becoming a professional athlete and living from the sport. I played for the Brazilian junior national team in several competitions across Latin America, and even competed at a Youth World Championship in South Africa in 2016.</p>
+        <p>I missed a lot of school because of travel for tournaments, but I always studied during breaks and on weekends — often in the bleachers of sports arenas. When I was 16, I decided I wanted to study abroad. I researched a lot online about the opportunities and how the process worked. I found out I needed to take the TOEFL and the ACT/SAT, and that American universities valued extracurricular activities just as much as academic performance. I threw myself into that journey: I participated in a research initiation program, prepared for the tests, and went through the application process. I was accepted to Barnard College, an institution affiliated with Columbia University, with a full scholarship.</p>
+        <p>At 19, I moved to New York, where I completed my undergraduate degree and graduated with a double major in Physics and Computer Science. I dedicated myself fully to my studies, did research from my first year, and in my third year was selected for a summer program at Caltech, working with LIGO. Today, at 25, I am in my third year of a Physics PhD at Rice University, currently living in France/Switzerland and working at CERN.</p>
+        <p>I share this because it can often seem like a career has to be one thing or another, or that dedicating so much time to sports is a waste. For me, the two were complementary: sport taught me discipline and gave me an independence I carry with me to this day. The truth is that only a small fraction of junior athletes go on to become professionals — but table tennis was always much more than competing. I moved to a new country without knowing anyone, which wasn't easy, but the sport was the through-line: I competed in the NCTTA, served as president of the table tennis club at Columbia and then at Rice, and made friends all over the world. Table tennis has given me a community wherever I go, and I am deeply grateful for that.</p>
+      </div>
+    </article>
+  </main>
+
+<style>
+  body {
+    margin: 0;
+    padding: 2rem;
+    font-family: 'Space Mono', monospace;
+    background-color: #e2e8f0;
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .article-container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .retro-btn {
+    display: inline-block;
+    font-size: 0.85rem;
+    background: white;
+    border: 2px solid #1a1a1a;
+    padding: 6px 14px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 2px 2px 0px #1a1a1a;
+    font-weight: bold;
+    align-self: flex-start;
+  }
+
+  .bento-card {
+    background: white;
+    border: 3px solid #1a1a1a;
+    padding: 2rem;
+    box-shadow: 4px 4px 0px #1a1a1a;
+    text-align: left;
+  }
+
+  .article-header h1 {
+    margin: 0.5rem 0 1.5rem 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+
+  .post-meta {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: bold;
+  }
+
+  .article-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin-bottom: 1.2rem;
+  }
+
+  .lead-text {
+    font-size: 1.1rem !important;
+    font-weight: bold;
+    color: #2563eb !important;
+    border-left: 4px solid #1a1a1a;
+    padding-left: 1rem;
+  }
+
+  /* Estilização Neo-Brutalista para as Imagens do Artigo */
+  .article-image-box {
+    border: 2px solid #1a1a1a;
+    padding: 0.5rem;
+    background: #f8fafc;
+    margin: 1.5rem 0;
+    box-shadow: 3px 3px 0px #1a1a1a;
+  }
+
+  .article-image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid #1a1a1a;
+  }
+
+  .image-caption {
+    margin: 0.5rem 0 0 0 !important;
+    font-size: 0.8rem !important;
+    color: #4b5563;
+    text-align: center;
+  }
+</style>
