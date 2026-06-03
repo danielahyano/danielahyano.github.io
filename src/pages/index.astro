@@ -1,6 +1,5 @@
 ---
 // 1. Welcome to the Astro Frontmatter! 
-// This is your "backend" space inside the file where you can run JavaScript or import assets.
 const pageTitle = "dani's corner";
 ---
 <script data-goatcounter="https://danielahyano.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -20,478 +19,345 @@ const pageTitle = "dani's corner";
     <main class="bento-container">
       
       <section class="bento-card profile-card">
-        <h2>hello, i'm dani! </h2>
-		<p>i am a physics phd student at rice university, analyzing lead-lead collisions with CERN's CMS experiment. my research focuses on charmonium production in ultraperipheral lead-lead collisions, probing gluon saturation in the nucleus. </p>
-    <p>outside of work, i play table tennis (i am a former junior table tennis brazilian team member!), and have been learning how to crochet. </p>
+        <h2>hello, i'm dani!</h2>
+        <p>i am a physics phd student at rice university, analyzing lead-lead collisions with CERN's CMS experiment. my research focuses on charmonium production in ultraperipheral lead-lead collisions, probing gluon saturation in the nucleus.</p>
+        <p>outside of work, i play table tennis (i am a former junior table tennis brazilian team member!), and have been learning how to crochet.</p>
       </section>
 
+      <section class="bento-card nav-card">
+        <h3>my journey</h3>
+        <ul class="clean-list">
+          <li>
+            <strong>CERN</strong>
+            <span class="sub-text">On-site Research (CMS Experiment), 2026–present</span>
+          </li>
+          <li>
+            <strong>Rice University</strong>
+            <span class="sub-text">PhD Physics, 2023–present</span>
+          </li>
+          <li>
+            <strong>Barnard College</strong>
+            <span class="sub-text">BA Physics &amp; CS, 2019–2023</span>
+          </li>
+        </ul>
+      </section>
 
-    <section class="bento-card nav-card">
-      <h3>my journey</h3>
-      <ul>
-        <li>
-          <strong>Rice University</strong><br>
-          PhD Physics, 2023–present
-        </li>
-        <li>
-          <strong>Barnard College</strong><br>
-          BA Physics &amp; CS, 2019–2023
-        </li>
-      </ul>
-    </section>
-    <section class="bento-card nav-card">
-      <h3>explore</h3>
-      <ul>
-        <li><a href="/lists">my board</a></li>
-        <li><a href="/blog">stories, notes, thoughts</a></li>
-      </ul>
-    </section>
+      <section class="bento-card nav-card">
+        <h3>explore</h3>
+        <ul class="bulleted-links">
+          <li><a href="/lists">my board</a></li>
+          <li><a href="/blog">stories, notes, thoughts</a></li>
+          <li><a href="https://dcc.ligo.org/public/0183/T2200251/001/Yano_Daniela_final_report.pdf" target="_blank" rel="noopener noreferrer">LIGO Caltech 2023, final report</a></li>
+        </ul>
+      </section>
 
-    <section class="bento-card nav-card">
-      <h3>links</h3>
-      <ul>
-        <li><a href="https://news.rice.edu/news/2026/rice-table-tennis-club-advances-third-consecutive-national-championships-underscoring"> rice table tennis team</a></li>
-        <li><a href="https://physics.barnard.edu/news/physics-major-daniela-hikari-yano-23">barnard interview</a></li>
-        <li><a href="https://dcc.ligo.org/public/0183/T2200251/001/Yano_Daniela_final_report.pdf">LIGO Caltech summer 2023, final report</a></li>
-      </ul>
-    </section>
+      <section class="bento-card nav-card">
+        <h3>on the web</h3>
+        <ul class="bulleted-links">
+          <li><a href="https://news.rice.edu/news/2026/rice-table-tennis-club-advances-third-consecutive-national-championships-underscoring" target="_blank" rel="noopener noreferrer">(rice news) rice table tennis advances to nationals</a></li>
+          <li><a href="https://physics.barnard.edu/news/physics-major-daniela-hikari-yano-23" target="_blank" rel="noopener noreferrer">(barnard news) Physics Major Daniela Hikari Yano ’23</a></li>
+        </ul>
+      </section>
 
+      <section class="bento-card terminal-card">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="terminal-title">dani@-core:~</span>
+        </div>
+        
+        <div class="terminal-body">
+          <div class="terminal-log" id="terminal-log">
+            <div>welcome to dani's core terminal v1.0.0</div>
+            <div class="help-hint">type <span class="highlight">help</span> to view available system commands.</div>
+          </div>
+          
+          <div class="terminal-input-line">
+            <span class="terminal-prompt">dani@root:~$</span>
+            <input type="text" id="terminal-input" autocomplete="off" autofocus placeholder="..." />
+          </div>
+        </div>
+      </section>
 
+      <section class="bento-card nav-card">
+        <h3>contact me</h3>
+        <ul class="bulleted-links">
+          <li><a href="https://www.linkedin.com/in/daniela-yano/" target="_blank" rel="noopener noreferrer">linkedin</a></li>
+          <li><a href="https://github.com/danielahyano?tab=repositories" target="_blank" rel="noopener noreferrer">github</a></li>
+        </ul>
+      </section>
 
-	<section class="bento-card terminal-card">
-  <div class="terminal-header">
-    <div class="terminal-buttons">
-      <span class="dot red"></span>
-      <span class="dot yellow"></span>
-      <span class="dot green"></span>
-    </div>
-    <span class="terminal-title">dani@-core:~</span>
-  </div>
-  
-  <div class="terminal-body">
-    <div class="terminal-log" id="terminal-log">
-      <div>welcome to dani's core terminal v1.0.0</div>
-      <div class="help-hint">type <span class="highlight">help</span> to view available system commands.</div>
-    </div>
-    
-    <div class="terminal-input-line">
-      <span class="terminal-prompt">dani@root:~$</span>
-      <input type="text" id="terminal-input" autocomplete="off" autofocus placeholder="..." />
-    </div>
-  </div>
-</section>
-
-  <section class="bento-card nav-card">
-      <h3>contact me</h3>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/daniela-yano/">linkedin</a></li>
-        <li><a href="https://github.com/danielahyano?tab=repositories">github</a></li>
-      </ul>
-    </section>
     </main>
-
 
   </body>
 </html>
 
 <style>
-  /* Base Reset & Vibe Setup */
+  /* Global CSS Reset & Setup */
   * {
     box-sizing: border-box;
     margin: 0;
-    padding: 1rm;
+    padding: 0;
   }
 
   body {
     font-family: 'Space Mono', monospace;
-    background-color: #f5e6e8; /* A soft grey for now; we'll add your dithered nature background later! */
+    background-color: #f3e1e4; /* Beautiful soft pink palette choice */
     color: #1a1a1a;
-    padding: 4rem 1rem 1rem 1rem;
+    padding: 4rem 1rem 2rem 1rem;
     display: flex;
     justify-content: center;
+    min-height: 100vh;
   }
 
-  /* The Magical Bento Box Grid System */
+  /* Bento Grid System */
   .bento-container {
     max-width: 1000px;
     width: 100%;
     display: grid;
-    /* This creates a robust 3-column layout grid */
     grid-template-columns: repeat(3, 1fr); 
-    gap: 1.5rem; /* The spacing between your bento cards */
+    gap: 1.5rem;
   }
 
-  /* The Scrapbook Comic Border Style from your image */
+  /* Structural Card Designs */
   .bento-card {
     background-color: #ffffff;
     border: 3px solid #1a1a1a;
     padding: 1.5rem;
-    box-shadow: 5px 5px 0px #1a1a1a; /* Gives that awesome retro 3D pop effect */
-    transition: transform 0.1s ease;
+    box-shadow: 5px 5px 0px #1a1a1a;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
   }
 
-  /* Subtle hover interaction to make it feel alive */
   .bento-card:hover {
     transform: translate(-2px, -2px);
     box-shadow: 7px 7px 0px #1a1a1a;
   }
 
-  /* Controlling how many grid blocks a card stretches across */
+  /* Card Grid Spans */
   .profile-card {
-    grid-column: span 3; /* Stretches across 2 columns */
+    grid-column: span 3;
   }
 
-  .status-card {
-    grid-column: span 1;
+  .profile-card p {
+    margin-top: 0.75rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
   }
 
   .nav-card {
     grid-column: span 1;
   }
 
-  .favorites-card {
+  .terminal-card {
     grid-column: span 2;
+    background: #111827;
+    color: #f3f4f6;
+    border: 3px solid #1a1a1a;
+    box-shadow: 5px 5px 0px #1a1a1a;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    overflow: hidden;
   }
 
-  /* Little UI Details inside the cards */
-  .avatar-placeholder {
-    width: 80px;
-    height: 80px;
-    border: 2.5px solid #1a1a1a;
-    background-color: #cbd5e1;
-    margin-bottom: 1rem;
-  }
-
+  /* Typography formatting */
   h2, h3 {
-    margin-bottom: 0.5rem;
     text-transform: lowercase;
+    color: #1a1a1a;
   }
 
-  ul {
+  h2 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  h3 { font-size: 1.1rem; margin-bottom: 1rem; border-bottom: 2px dashed #e2e8f0; padding-bottom: 0.25rem;}
+
+  /* List Architecture Formatting */
+  .clean-list, .bulleted-links {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
-  li {
-    margin: 0.5rem 0;
+  .clean-list strong {
+    display: block;
+    font-size: 0.9rem;
+    color: #1a1a1a;
   }
 
-  a {
-    color: #10b981; /* Accent green links */
+  .sub-text {
+    display: block;
+    font-size: 0.8rem;
+    color: #4b5563;
+    margin-top: 0.1rem;
+  }
+
+/* 1. Reset list spacing */
+  .bulleted-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* 2. Turn the list item into a flex row to align bullets nicely */
+  .bulleted-links li {
+    display: flex;
+    align-items: flex-start; /* Keeps arrow aligned to top line if text wraps */
+    gap: 0.5rem; /* Exact horizontal space between arrow and text */
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* 3. The Custom Arrow Bullet */
+  .bulleted-links li::before {
+    content: "→";
+    color: #1a1a1a;
+    font-weight: bold;
+    flex-shrink: 0; /* Prevents the arrow from squeezing on small screens */
+  }
+
+  /* 4. The Link Styles */
+  .bulleted-links a {
+    color: #4a6b5d; /* Your gorgeous muted retro-sage green */
     text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline;
+    word-break: break-word; /* Ensures graceful wrap-arounds */
+  }
+
+  .bulleted-links a:hover {
+    text-decoration: underline;
+    color: #1a1a1a;
+  }
+
+  /* Terminal UI Window Components */
+  .terminal-header {
+    background: #e5e7eb;
+    border-bottom: 3px solid #1a1a1a;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .terminal-buttons {
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .terminal-buttons .dot {
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid #1a1a1a;
+    border-radius: 50%;
+  }
+  .dot.red { background: #ef4444; }
+  .dot.yellow { background: #eab308; }
+  .dot.green { background: #22c55e; }
+
+  .terminal-title {
+    color: #1a1a1a;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .terminal-body {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    overflow-y: auto;
+  }
+
+  .terminal-log {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .help-hint {
+    color: #9ca3af;
+    font-size: 0.8rem;
+  }
+
+  .highlight {
+    color: #a3e635; 
+  }
+
+  .terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+  }
+
+  .terminal-prompt {
+    color: #38bdf8;
     font-weight: bold;
   }
 
-  a:hover {
-    text-decoration: underline;
+  #terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
+    outline: none;
   }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 0.5rem;
+  /* Responsive media query styling layout structure */
+  @media (max-width: 800px) {
+    .bento-container {
+      grid-template-columns: 1fr;
+    }
+    .profile-card, .nav-card, .terminal-card {
+      grid-column: span 1 !important;
+    }
+    body {
+      padding: 2rem 1rem;
+    }
   }
-
-  td {
-    padding: 0.4rem;
-    border-bottom: 1px dashed #cbd5e1;
-  }
-
-.song-link-wrapper {
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
-}
-
-/* Chat Container Box */
-.guestbook-card.chat-style {
-  grid-column: span 2;
-  background-color: #ffffff; /* Very pale lime background matching your image */
-  border: 3px solid #1a1a1a;
-  display: flex;
-  flex-direction: column;
-  height: 300px; /* Locked height so it behaves like a chat client */
-  padding: 0; /* Clear default padding for structural header/footer layout */
-  overflow: hidden;
-}
-
-/* Chat Header Bar */
-.chat-header {
-  background-color: #ffffff /* Lime green header tab */
-  border-bottom: 3px solid #1a1a1a;
-  padding: 0.75rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.chat-header h3 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.chat-status {
-  font-size: 0.75rem;
-  background: #22c55e;
-  color: white;
-  padding: 2px 6px;
-  border: 1.5px solid #1a1a1a;
-  font-weight: bold;
-}
-
-/* Scrollable Chat Window */
-.chat-history {
-  flex: 1;
-  overflow-y: auto;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  max-width: 100% !important; /* Let it fill the card width fully */
-}
-
-/* Individual Discord-Style Chat Bubbles */
-.guestbook-entry {
-  background: #ffffff;
-  border: 2px solid #1a1a1a;
-  padding: 0.5rem 0.75rem;
-  margin: 0;
-  box-shadow: 2px 2px 0px #1a1a1a;
-  border-radius: 4px;
-  width: fit-content;
-  max-width: 85%;
-}
-
-.entry-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: #4d7c0f; /* Dark forest green text for user names */
-  margin-bottom: 0.15rem;
-}
-
-.entry-text {
-  font-size: 0.9rem;
-  color: #1a1a1a;
-  padding-left: 0;
-  margin: 0;
-  word-break: break-word;
-}
-
-/* Bottom Chat Input Dock */
-.chat-input-bar {
-  background: #ffffff;
-  border-top: 3px solid #1a1a1a;
-  padding: 0.5rem;
-  display: flex;
-  gap: 0.5rem;
-  max-width: 100% !important; /* Overwrite the old max-width block rule */
-  margin: 0;
-}
-
-.chat-name-input {
-  width: 100px !important;
-  flex-shrink: 0;
-}
-
-.chat-msg-input {
-  flex: 1;
-}
-
-.chat-name-input, .chat-msg-input, #stamp-dropdown {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
-  padding: 0.4rem;
-  border: 2px solid #1a1a1a;
-  background: white;
-}
-
-#stamp-dropdown {
-  height: 100%;
-  cursor: pointer;
-}
-
-/* Compact Retro Arrow Send Button */
-.chat-send-btn {
-  background: #84cc16;
-  border: 2px solid #1a1a1a;
-  padding: 0 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 2px 2px 0px #1a1a1a;
-}
-
-.chat-send-btn:active {
-  transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0px #1a1a1a;
-}
-
-/* 1. Style the outer container block */
-.marquee-card {
-  grid-column: span 3; /* Stretches nicely across the entire width */
-  background: #fef08a; /* A soft retro yellow tone */
-  border: 2px solid #1a1a1a;
-  padding: 0.5rem 0 !important; /* Tight vertical padding, clears side padding */
-  overflow: hidden; /* Hides the text when it slides outside the box edges */
-  display: flex;
-}
-
-/* 2. Create the horizontal conveyer-belt track */
-.marquee-track {
-  display: flex;
-  width: max-content;
-}
-
-/* 3. Style the moving phrase strings */
-.marquee-content {
-  font-family: 'Space Mono', monospace;
-  font-weight: bold;
-  font-size: 0.9rem;
-  white-space: nowrap; /* Prevents the text from wrapping onto a second line */
-  text-transform: lowercase;
-  
-  /* Attaches our custom animation loop */
-  animation: scroll-right 15s linear infinite;
-}
-
-/* 4. Define the keyframes math to make it glide seamlessly to the right */
-@keyframes scroll-right {
-  0% {
-    transform: translateX(-50%); /* Starts shifted halfway back */
-  }
-  100% {
-    transform: translateX(0%); /* Glides smoothly forward to zero alignment */
-  }
-}
-/* Terminal Container */
-.terminal-card {
-  grid-column: span 2; /* Adjust to span 3 if you want it full-width! */
-  background: #111827; /* Deep midnight-black background */
-  color: #f3f4f6;
-  border: 3px solid #1a1a1a;
-  box-shadow: 4px 4px 0px #1a1a1a;
-  padding: 0 !important; /* Clears padding so header spans edge-to-edge */
-  display: flex;
-  flex-direction: column;
-  height: 280px;
-  overflow: hidden;
-}
-
-/* Window Bar Header */
-.terminal-header {
-  background: #e5e7eb;
-  border-bottom: 3px solid #1a1a1a;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.terminal-buttons {
-  display: flex;
-  gap: 0.35rem;
-}
-
-.terminal-buttons .dot {
-  width: 10px;
-  height: 10px;
-  border: 1.5px solid #1a1a1a;
-  border-radius: 50%;
-}
-.dot.red { background: #ef4444; }
-.dot.yellow { background: #eab308; }
-.dot.green { background: #22c55e; }
-
-.terminal-title {
-  color: #1a1a1a;
-  font-size: 0.8rem;
-  font-weight: bold;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Interior Terminal Display */
-.terminal-body {
-  padding: 1rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
-  overflow-y: auto;
-  text-align: left;
-}
-
-.terminal-log {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.help-hint {
-  color: #9ca3af;
-  font-size: 0.8rem;
-}
-
-.highlight {
-  color: #a3e635; /* Crisp lime highlight text */
-}
-
-/* Command Entry Bar */
-.terminal-input-line {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.terminal-prompt {
-  color: #38bdf8; /* Bright cyan terminal prompt */
-  font-weight: bold;
-}
-
-#terminal-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  color: #ffffff;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
-  outline: none;
-  padding: 0;
-}
 </style>
 
 <script is:inline>
-const termInput = document.getElementById('terminal-input');
+  const termInput = document.getElementById('terminal-input');
   const termLog = document.getElementById('terminal-log');
 
-  // Command configurations map
   const commands = {
-    help: "available commands: <br> <li><span class='highlight'>about</span> - learn about my phd research</li> <li><span class='highlight'>skills</span> - see my technical compute stack</li> <li><span class='highlight'>clear</span> - flush the screen buffer</li>",
-    about: "dani is a physics ph.d. student at rice university working on high energy physics collision at cern",
-    skills: "languages: [python, c++, sql]<br>",
+    help: "available commands: <br> • <span class='highlight'>about</span> - learn about my phd research<br> • <span class='highlight'>skills</span> - see my technical compute stack<br> • <span class='highlight'>clear</span> - flush the screen buffer",
+    about: "dani is a physics ph.d. student at rice university working on high energy physics collisions at cern.",
+    skills: "languages & frameworks: [python, c++, sql, astro, tailwind, linux]",
   };
 
   termInput.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
       const inputVal = termInput.value.trim().toLowerCase();
       
-      // 1. Log the command echo line onto the board
+      // Echo user command entry
       termLog.innerHTML += `<div class="terminal-input-line"><span class="terminal-prompt">dani@root:~$</span> <span>${inputVal}</span></div>`;
       
-      // 2. Compute command outputs
+      // Run pipeline logical loops
       if (inputVal === 'clear') {
         termLog.innerHTML = '';
       } else if (inputVal in commands) {
         termLog.innerHTML += `<div>${commands[inputVal]}</div>`;
       } else if (inputVal === '') {
-        // Do nothing if empty enter is pressed
+        // Do nothing for clean whitespace registers
       } else {
         termLog.innerHTML += `<div style="color: #ef4444;">bash: command not found: ${inputVal}. type <span class="highlight">help</span> for systems listing.</div>`;
       }
       
-      // 3. Clear prompt line and force layout to track bottom scroll
       termInput.value = '';
       const body = document.querySelector('.terminal-body');
       body.scrollTop = body.scrollHeight;
